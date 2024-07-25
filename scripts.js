@@ -5,11 +5,13 @@ function getRandomNumber(max){
 function getComputerChoice(){
     let hand;
     let x = getRandomNumber(3);  //assign random number to variable x, in this case max
-    if(x=0){                     //is 3 as we want a choice of three options
+    if(x==0){                     //is 3 as we want a choice of three options
         return hand = "rock";
-    }else if(x=1){
+    }else if(x==1){
         return hand = "paper";
     }else{
         return hand = "scissors";
     }                          
 }
+
+console.log(getComputerChoice());
