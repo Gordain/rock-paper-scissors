@@ -22,3 +22,26 @@ function getHumanChoice(){      //this will prompt the user to type in their cho
     return humanHand;
 }
 
+function playRound(humanChoice, computerChoice){    //this will play a round with the assigned choices
+    let text = toLowerCase(humanChoice);    //parses human choice to make it case-insensitive
+    let output;
+    switch(text){   //nest switch statement to evaluate the humanChoice aginst the computer
+        case rock:
+            if(computerChoice == rock){
+                return output = "Draw!";                
+            }else if(computerChoice == paper){
+                return output = "You lose! Paper beats rock";
+            }else{
+                return output = "You win! Rock beats scissors";
+            }
+            break;
+        case paper:
+            if(computerChoice == rock){
+                return output = "You win! Paper beats rock";
+            }
+        case scissors:
+    }
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
