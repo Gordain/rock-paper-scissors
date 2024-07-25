@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 function getRandomNumber(max){
     return Math.floor(Math.random()*max);   //get a random number between 0 and max
 }
@@ -15,7 +18,7 @@ function getComputerChoice(){
 }
 
 function getHumanChoice(){      //this will prompt the user to type in their choice
-    let humanHand;
+    let humanHand = prompt("What is your choice?");
+    return humanHand;
 }
 
-console.log(getComputerChoice());
