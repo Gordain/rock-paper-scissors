@@ -3,15 +3,19 @@ function getRandomNumber(max){
 }
 
 function getComputerChoice(){
-    let hand;
+    let computerHand;
     let x = getRandomNumber(3);  //assign random number to variable x, in this case max
     if(x==0){                     //is 3 as we want a choice of three options
-        return hand = "rock";
+        return computerHand = "rock";
     }else if(x==1){
-        return hand = "paper";
+        return computerHand = "paper";
     }else{
-        return hand = "scissors";
+        return computerHand = "scissors";
     }                          
+}
+
+function getHumanChoice(){      //this will prompt the user to type in their choice
+    let humanHand;
 }
 
 console.log(getComputerChoice());
