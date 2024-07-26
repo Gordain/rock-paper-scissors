@@ -26,10 +26,10 @@ function playRound(humanChoice, computerChoice){    //this will play a round wit
     let text = humanChoice.toLowerCase();    //parses human choice to make it case-insensitive
     let output;
     switch(text){   //nest switch statement to evaluate the humanChoice aginst the computer
-        case rock:
-            if(computerChoice == rock){
+        case "rock":
+            if(computerChoice == "rock"){
                 return console.log(output) = "Draw!";                
-            }else if(computerChoice == paper){
+            }else if(computerChoice == "paper"){
                 computerScore++;
                 return console.log(output) = "You lose! Paper beats rock";
             }else{
@@ -37,22 +37,22 @@ function playRound(humanChoice, computerChoice){    //this will play a round wit
                 return console.log(output) = "You win! Rock beats scissors";
             }
             break;
-        case paper:
-            if(computerChoice == rock){
+        case "paper":
+            if(computerChoice == "rock"){
                 humanScore++;
                 return console.log(output) = "You win! Paper beats rock";
-            }else if(computerChoice == paper){
+            }else if(computerChoice == "paper"){
                 return console.log(output) = "Draw!";
             }else{
                 computerScore++;
                 return console.log(output) = "You lose! Scissors beats paper";
             }
             break;
-        case scissors:
-            if(computerChoice == rock){
+        case "scissors":
+            if(computerChoice == "rock"){
                 computerScore++;
                 return console.log(output) = "You lose! Rock beats scissors";
-            }else if(computerChoice == paper){
+            }else if(computerChoice == "paper"){
                 humanScore++;
                 return console.log(output) = "You win! Scissors beats paper";
             }else{
