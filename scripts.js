@@ -28,35 +28,35 @@ function playRound(humanChoice, computerChoice){    //this will play a round wit
     switch(text){   //nest switch statement to evaluate the humanChoice aginst the computer
         case "rock":
             if(computerChoice == "rock"){
-                return console.log(output) = "Draw!";                
+                return console.log("Draw!");                
             }else if(computerChoice == "paper"){
-                computerScore++;
-                return console.log(output) = "You lose! Paper beats rock";
+                computerScore = computerScore++;
+                return console.log("You lose! Paper beats rock");
             }else{
-                humanScore++;
-                return console.log(output) = "You win! Rock beats scissors";
+                humanScore = humanScore++;
+                return console.log("You win! Rock beats scissors");
             }
             break;
         case "paper":
             if(computerChoice == "rock"){
-                humanScore++;
-                return console.log(output) = "You win! Paper beats rock";
+                humanScore = humanScore++;
+                return console.log("You win! Paper beats rock");
             }else if(computerChoice == "paper"){
-                return console.log(output) = "Draw!";
+                return console.log("Draw!");
             }else{
-                computerScore++;
-                return console.log(output) = "You lose! Scissors beats paper";
+                computerScore = computerScore++;
+                return console.log("You lose! Scissors beats paper");
             }
             break;
         case "scissors":
             if(computerChoice == "rock"){
-                computerScore++;
-                return console.log(output) = "You lose! Rock beats scissors";
+                computerScore = computerScore++;
+                return console.log("You lose! Rock beats scissors");
             }else if(computerChoice == "paper"){
-                humanScore++;
-                return console.log(output) = "You win! Scissors beats paper";
+                humanScore = humanScore++;
+                return console.log("You win! Scissors beats paper");
             }else{
-                return console.log(output) = "Draw!";
+                return console.log("Draw!");
             }
             break;
     }
