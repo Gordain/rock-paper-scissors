@@ -23,7 +23,7 @@ function getHumanChoice(){      //this will prompt the user to type in their cho
 }
 
 function playRound(humanChoice, computerChoice){    //this will play a round with the assigned choices
-    let text = toLowerCase(humanChoice);    //parses human choice to make it case-insensitive
+    let text = humanChoice.toLowerCase();    //parses human choice to make it case-insensitive
     let output;
     switch(text){   //nest switch statement to evaluate the humanChoice aginst the computer
         case rock:
@@ -64,3 +64,5 @@ function playRound(humanChoice, computerChoice){    //this will play a round wit
 
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
+
+playRound(humanSelection,computerSelection)
