@@ -62,6 +62,12 @@ function playRound(humanChoice, computerChoice){    //this will play a round wit
     }
 }
 
+function playGame(){
+    for(let i = 0; i < 5; i++){
+
+    }
+}
+
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
