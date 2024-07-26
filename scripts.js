@@ -28,35 +28,35 @@ function playRound(humanChoice, computerChoice){    //this will play a round wit
     switch(text){   //nest switch statement to evaluate the humanChoice aginst the computer
         case rock:
             if(computerChoice == rock){
-                return output = "Draw!";                
+                return console.log(output) = "Draw!";                
             }else if(computerChoice == paper){
                 computerScore++;
-                return output = "You lose! Paper beats rock";
+                return console.log(output) = "You lose! Paper beats rock";
             }else{
                 humanScore++;
-                return output = "You win! Rock beats scissors";
+                return console.log(output) = "You win! Rock beats scissors";
             }
             break;
         case paper:
             if(computerChoice == rock){
                 humanScore++;
-                return output = "You win! Paper beats rock";
+                return console.log(output) = "You win! Paper beats rock";
             }else if(computerChoice == paper){
-                return output = "Draw!";
+                return console.log(output) = "Draw!";
             }else{
                 computerScore++;
-                return output = "You lose! Scissors beats paper";
+                return console.log(output) = "You lose! Scissors beats paper";
             }
             break;
         case scissors:
             if(computerChoice == rock){
                 computerScore++;
-                return output = "You lose! Rock beats scissors";
+                return console.log(output) = "You lose! Rock beats scissors";
             }else if(computerChoice == paper){
                 humanScore++;
-                return output = "You win! Scissors beats paper";
+                return console.log(output) = "You win! Scissors beats paper";
             }else{
-                return output = "Draw!";
+                return console.log(output) = "Draw!";
             }
             break;
     }
