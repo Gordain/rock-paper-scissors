@@ -38,8 +38,21 @@ function playRound(humanChoice, computerChoice){    //this will play a round wit
         case paper:
             if(computerChoice == rock){
                 return output = "You win! Paper beats rock";
+            }else if(computerChoice == paper){
+                return output = "Draw!";
+            }else{
+                return output = "You lose! Scissors beats paper";
             }
+            break;
         case scissors:
+            if(computerChoice == rock){
+                return output = "You lose! Rock beats scissors";
+            }else if(computerChoice == paper){
+                return output = "You win! Scissors beats paper";
+            }else{
+                return output = "Draw!";
+            }
+            break;
     }
 }
 
