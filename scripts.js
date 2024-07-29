@@ -22,7 +22,7 @@ function getHumanChoice(){      //this will prompt the user to type in their cho
     return humanHand;
 }
 
-function playRound(humanChoice, computerChoice){    //this will play a round with the assigned choices
+/*function playRound(humanChoice, computerChoice){    //this will play a round with the assigned choices
     let text = humanChoice.toLowerCase();    //parses human choice to make it case-insensitive
     let output;
     switch(text){   //nest switch statement to evaluate the humanChoice aginst the computer
@@ -60,10 +60,12 @@ function playRound(humanChoice, computerChoice){    //this will play a round wit
             }
             break;
     }
-}
+}*/
 
 function playGame(){
     for(let i = 0; i < 5; i++){
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
         function playRound(humanChoice,computerChoice){
             let text = humanChoice.toLowerCase();    
             switch(text){   
@@ -105,7 +107,6 @@ function playGame(){
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+
 
 playRound(humanSelection,computerSelection)
