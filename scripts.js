@@ -22,7 +22,7 @@ function getHumanChoice(){      //this will prompt the user to type in their cho
     return humanHand;
 }
 
-/*function playRound(humanChoice, computerChoice){    //this will play a round with the assigned choices
+function playRound(humanChoice, computerChoice){    //this will play a round with the assigned choices
     let text = humanChoice.toLowerCase();    //parses human choice to make it case-insensitive
     let output;
     switch(text){   //nest switch statement to evaluate the humanChoice aginst the computer
@@ -60,11 +60,11 @@ function getHumanChoice(){      //this will prompt the user to type in their cho
             }
             break;
     }
-}*/
+}
 
 function playGame(){
     for(let i = 0; i < 5; i++){
-        playRound(humanChoice,computerChoice){
+        function playRound(humanChoice,computerChoice){
             let text = humanChoice.toLowerCase();    
             switch(text){   
                 case "rock":
