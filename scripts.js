@@ -74,30 +74,30 @@ function playGame(){
                     if(computerChoice == "rock"){
                         return console.log("Draw!");                
                     }else if(computerChoice == "paper"){
-                        computerScore = computerScore++;
+                        computerScore++;
                         return console.log("You lose! Paper beats rock");
                     }else{
-                        humanScore = humanScore++;
+                        humanScore++;
                         return console.log("You win! Rock beats scissors");
                     }
                     break;
                 case "paper":
                     if(computerChoice == "rock"){
-                        humanScore = humanScore++;
+                        humanScore++;
                         return console.log("You win! Paper beats rock");
                     }else if(computerChoice == "paper"){
                         return console.log("Draw!");
                     }else{
-                        computerScore = computerScore++;
+                        computerScore++;
                         return console.log("You lose! Scissors beats paper");
                     }
                     break;
                 case "scissors":
                     if(computerChoice == "rock"){
-                        computerScore = computerScore++;
+                        computerScore++;
                         return console.log("You lose! Rock beats scissors");
                     }else if(computerChoice == "paper"){
-                        humanScore = humanScore++;
+                        humanScore++;
                         return console.log("You win! Scissors beats paper");
                     }else{
                         return console.log("Draw!");
@@ -107,6 +107,7 @@ function playGame(){
         }
         playRound(humanSelection,computerSelection);
     }
+    console.log('Final score, yours: %s and the computers: %s', humanScore, computerScore);
 }
 
 playGame();
