@@ -65,8 +65,8 @@ function playGame(){
     let humanScore = 0;
     let computerScore = 0;
     for(let i = 0; i < 5; i++){
-        const humanChoice = getHumanChoice();
-        const computerChoice = getComputerChoice();
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
         function playRound(humanChoice,computerChoice){
             let text = humanChoice.toLowerCase();    
             switch(text){   
@@ -105,9 +105,8 @@ function playGame(){
                     break;
             }
         }
+        playRound(humanSelection,computerSelection);
     }
 }
-
-
 
 playGame();
