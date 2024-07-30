@@ -1,5 +1,4 @@
-let humanScore = 0;
-let computerScore = 0;
+
 
 function getRandomNumber(max){
     return Math.floor(Math.random()*max);   //get a random number between 0 and max
@@ -63,9 +62,11 @@ function getHumanChoice(){      //this will prompt the user to type in their cho
 }*/
 
 function playGame(){
+    let humanScore = 0;
+    let computerScore = 0;
     for(let i = 0; i < 5; i++){
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
+        const humanChoice = getHumanChoice();
+        const computerChoice = getComputerChoice();
         function playRound(humanChoice,computerChoice){
             let text = humanChoice.toLowerCase();    
             switch(text){   
@@ -109,4 +110,4 @@ function playGame(){
 
 
 
-playRound(humanSelection,computerSelection)
+playGame();
