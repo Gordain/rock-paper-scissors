@@ -19,19 +19,22 @@ function getComputerChoice(){
 let computerScore = 0;
 let humanScore = 0;
 
-const buttons = document.querySelectorAll("button");
-
 /*function getHumanChoice(){      //this will prompt the user to type in their choice
     let humanHand = prompt("What is your choice?");
     return humanHand;
 }*/
 
-buttons.forEach((button) => {
-    button.addEventListener("click", playRound);
+function playGame(){
+    let buttons = document.querySelectorAll("button");
+    buttons.forEach((button) => {
+    button.addEventListener("click", playRound(button.id));
 });
 
-function playRound(humanChoice, computerChoice){    //this will play a round with the assigned choices
-    let text = button.id;    //parses human choice to make it case-insensitive
+};
+
+function playRound(playerChoice){    //this will play a round with the assigned choices
+    let computerChoice = getComputerChoice();
+    let text = playerChoice;    //parses human choice to make it case-insensitive
     let output;
     switch(text){   //nest switch statement to evaluate the humanChoice aginst the computer
         case "rock":
@@ -119,4 +122,4 @@ function playRound(humanChoice, computerChoice){    //this will play a round wit
     console.log('Final score, yours: %s and the computers: %s', humanScore, computerScore);
 }*/
 
-//playGame();
+playGame();
