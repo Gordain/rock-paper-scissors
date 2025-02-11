@@ -43,35 +43,44 @@ function playRound(playerChoice){    //this will play a round with the assigned 
     switch(playerChoice){   //nest switch statement to evaluate the humanChoice aginst the computer
         case "rock":
             if(computerChoice == "rock"){
-                return console.log("Draw!");                
+                displayResult("Draw");
+                return;                
             }else if(computerChoice == "paper"){
                 computerScore = computerScore++;
-                return console.log("You lose! Paper beats rock");
+                displayResult("You lose! Paper beats rock!");
+                return;
             }else{
                 humanScore = humanScore++;
-                return console.log("You win! Rock beats scissors");
+                displayResult("You win! Rock beats scissors");
+                return;
             }
             break;
         case "paper":
             if(computerChoice == "rock"){
                 humanScore = humanScore++;
-                return console.log("You win! Paper beats rock");
+                displayResult("You win! Paper beats rock");
+                return;
             }else if(computerChoice == "paper"){
-                return console.log("Draw!");
+                displayResult("Draw!");
+                return;
             }else{
                 computerScore = computerScore++;
-                return console.log("You lose! Scissors beats paper");
+                displayResult("You lose! Scissors beats paper");
+                return;
             }
             break;
         case "scissors":
             if(computerChoice == "rock"){
                 computerScore = computerScore++;
-                return console.log("You lose! Rock beats scissors");
+                displayResult("You lose! Rock beats scissors");
+                return;
             }else if(computerChoice == "paper"){
                 humanScore = humanScore++;
-                return console.log("You win! Scissors beats paper");
+                displayResult("You win! Scissors beats paper");
+                return;
             }else{
-                return console.log("Draw!");
+                displayResult("Draw!");
+                return;
             }
             break;
     }
