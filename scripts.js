@@ -38,19 +38,31 @@ function displayResult(result){
     resultContainer.appendChild(content);
 };
 
+function deletePreviousResult(){
+    let resultContainerToDelete = document.getElementsByClassName("results");
+    
+    while(resultContainerToDelete.firstElementChild){
+        let content = document.querySelector("content");
+        content.remove();
+    }
+};
+
 function playRound(playerChoice){    //this will play a round with the assigned choices
     let computerChoice = getComputerChoice();    
     switch(playerChoice){   //nest switch statement to evaluate the humanChoice aginst the computer
         case "rock":
             if(computerChoice == "rock"){
+                deletePreviousResult();
                 displayResult("Draw");
                 return;                
             }else if(computerChoice == "paper"){
                 computerScore = computerScore++;
+                deletePreviousResult();
                 displayResult("You lose! Paper beats rock!");
                 return;
             }else{
                 humanScore = humanScore++;
+                deletePreviousResult();
                 displayResult("You win! Rock beats scissors");
                 return;
             }
@@ -58,13 +70,16 @@ function playRound(playerChoice){    //this will play a round with the assigned 
         case "paper":
             if(computerChoice == "rock"){
                 humanScore = humanScore++;
+                deletePreviousResult();
                 displayResult("You win! Paper beats rock");
                 return;
             }else if(computerChoice == "paper"){
+                deletePreviousResult();
                 displayResult("Draw!");
                 return;
             }else{
                 computerScore = computerScore++;
+                deletePreviousResult();
                 displayResult("You lose! Scissors beats paper");
                 return;
             }
@@ -72,13 +87,16 @@ function playRound(playerChoice){    //this will play a round with the assigned 
         case "scissors":
             if(computerChoice == "rock"){
                 computerScore = computerScore++;
+                deletePreviousResult();
                 displayResult("You lose! Rock beats scissors");
                 return;
             }else if(computerChoice == "paper"){
                 humanScore = humanScore++;
+                deletePreviousResult();
                 displayResult("You win! Scissors beats paper");
                 return;
             }else{
+                deletePreviousResult();
                 displayResult("Draw!");
                 return;
             }
