@@ -30,6 +30,11 @@ function playGame(){
     
 };
 
+function displayResult(result){
+    let resultContainer = document.querySelector(".results"); //reference to results div
+    
+};
+
 function playRound(playerChoice){    //this will play a round with the assigned choices
     let computerChoice = getComputerChoice();    
     switch(playerChoice){   //nest switch statement to evaluate the humanChoice aginst the computer
