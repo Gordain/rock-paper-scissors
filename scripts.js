@@ -1,4 +1,9 @@
-
+let computerScore = 0;
+let humanScore = 0;
+let buttons = document.querySelectorAll("button");
+    buttons.forEach(button => {
+    button.addEventListener("click", () => {playRound(button.id)})  //no idea why this works, assuming its calling this function when its clicked, rather than passing function when clicked
+});
 
 function getRandomNumber(max){
     return Math.floor(Math.random()*max);   //get a random number between 0 and max
@@ -16,27 +21,18 @@ function getComputerChoice(){
     }                          
 }
 
-let computerScore = 0;
-let humanScore = 0;
-
 /*function getHumanChoice(){      //this will prompt the user to type in their choice
     let humanHand = prompt("What is your choice?");
     return humanHand;
 }*/
 
 function playGame(){
-    let buttons = document.querySelectorAll("button");
-    buttons.forEach((button) => {
-    button.addEventListener("click", playRound(button.id));
-});
-
+    
 };
 
 function playRound(playerChoice){    //this will play a round with the assigned choices
-    let computerChoice = getComputerChoice();
-    let text = playerChoice;    //parses human choice to make it case-insensitive
-    let output;
-    switch(text){   //nest switch statement to evaluate the humanChoice aginst the computer
+    let computerChoice = getComputerChoice();    
+    switch(playerChoice){   //nest switch statement to evaluate the humanChoice aginst the computer
         case "rock":
             if(computerChoice == "rock"){
                 return console.log("Draw!");                
@@ -122,4 +118,3 @@ function playRound(playerChoice){    //this will play a round with the assigned 
     console.log('Final score, yours: %s and the computers: %s', humanScore, computerScore);
 }*/
 
-playGame();
