@@ -32,7 +32,10 @@ function playGame(){
 
 function displayResult(result){
     let resultContainer = document.querySelector(".results"); //reference to results div
-    
+    let content = document.createElement("div");
+    content.classList.add("content");
+    content.textContent = result;
+    resultContainer.appendChild(content);
 };
 
 function playRound(playerChoice){    //this will play a round with the assigned choices
