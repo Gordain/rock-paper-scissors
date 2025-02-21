@@ -31,7 +31,7 @@ function playGame(){
 };
 
 function displayResult(result){
-    let resultContainer = document.querySelector(".results"); //reference to results div
+    let resultContainer = document.querySelector("#results"); //reference to results div
     let content = document.createElement("div");
     content.classList.add("content");
     content.textContent = result;
@@ -39,11 +39,13 @@ function displayResult(result){
 };
 
 function deletePreviousResult(){
-    let resultContainerToDelete = document.getElementsByClassName("results");
+    let resultContainerToDelete = document.getElementById("results");
     
-    while(resultContainerToDelete.firstElementChild){
-        let content = document.querySelector("content");
-        content.remove();
+    if(resultContainerToDelete.firstElementChild == null){
+        return;
+    }else{ 
+        let contentRemove = document.querySelector(".content");
+        resultContainerToDelete.removeChild(contentRemove);
     }
 };
 
