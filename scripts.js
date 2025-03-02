@@ -49,6 +49,14 @@ function deletePreviousResult(){
     }
 };
 
+function displayScore(humanScore, computerScore){
+    let showScoreContainer = document.querySelector("#scoreContainer");
+    let scoreContent = document.createElement("div");
+    scoreContent.classList.add("score");
+    scoreContent.textContent = "Human score is " + humanScore + ", Computer Score is " + computerScore;
+
+};
+
 function playRound(playerChoice){    //this will play a round with the assigned choices
     let computerChoice = getComputerChoice();    
     switch(playerChoice){   //nest switch statement to evaluate the humanChoice aginst the computer
