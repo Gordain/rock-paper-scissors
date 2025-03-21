@@ -49,12 +49,22 @@ function deletePreviousResult(){
     }
 };
 
+/*function removePreviousScore(){
+    let scoreToRemove = document.querySelector(".score");
+
+    if(scoreToRemove.firstElementChild == null){
+        return;
+    }else{
+        let scoreRemove = document.querySelector("");
+    }
+};*/
+
 function displayScore(humanScore, computerScore){
     let showScoreContainer = document.querySelector("#scoreContainer");
     let scoreContent = document.createElement("div");
     scoreContent.classList.add("score");
     scoreContent.textContent = "Human score is " + humanScore + ", Computer Score is " + computerScore;
-
+    showScoreContainer.appendChild(scoreContent);
 };
 
 function playRound(playerChoice){    //this will play a round with the assigned choices
@@ -64,50 +74,59 @@ function playRound(playerChoice){    //this will play a round with the assigned 
             if(computerChoice == "rock"){
                 deletePreviousResult();
                 displayResult("Draw");
+                displayScore(humanScore, computerScore);
                 return;                
             }else if(computerChoice == "paper"){
-                computerScore = computerScore++;
+                computerScore = ++computerScore;
                 deletePreviousResult();
                 displayResult("You lose! Paper beats rock!");
+                displayScore(humanScore, computerScore);
                 return;
             }else{
-                humanScore = humanScore++;
+                humanScore = ++humanScore;
                 deletePreviousResult();
                 displayResult("You win! Rock beats scissors");
+                displayScore(humanScore, computerScore);
                 return;
             }
             break;
         case "paper":
             if(computerChoice == "rock"){
-                humanScore = humanScore++;
+                humanScore = ++humanScore;
                 deletePreviousResult();
                 displayResult("You win! Paper beats rock");
+                displayScore(humanScore, computerScore);
                 return;
             }else if(computerChoice == "paper"){
                 deletePreviousResult();
                 displayResult("Draw!");
+                displayScore(humanScore, computerScore);
                 return;
             }else{
-                computerScore = computerScore++;
+                computerScore = ++computerScore;
                 deletePreviousResult();
                 displayResult("You lose! Scissors beats paper");
+                displayScore(humanScore, computerScore);
                 return;
             }
             break;
         case "scissors":
             if(computerChoice == "rock"){
-                computerScore = computerScore++;
+                computerScore = ++computerScore;
                 deletePreviousResult();
                 displayResult("You lose! Rock beats scissors");
+                displayScore(humanScore, computerScore);
                 return;
             }else if(computerChoice == "paper"){
-                humanScore = humanScore++;
+                humanScore = ++humanScore;
                 deletePreviousResult();
                 displayResult("You win! Scissors beats paper");
+                displayScore(humanScore, computerScore);
                 return;
             }else{
                 deletePreviousResult();
                 displayResult("Draw!");
+                displayScore(humanScore, computerScore);
                 return;
             }
             break;
