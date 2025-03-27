@@ -73,10 +73,14 @@ function announceWinner(){
         alert("You are the winner!");
         humanScore = 0;
         computerScore = 0;
+        deletePreviousResult();
+        removePreviousScore();
     }else if(computerScore == 5){
         alert("The computer is the winner!");
         humanScore = 0;
         computerScore = 0;
+        deletePreviousResult();
+        removePreviousScore();
     }else{
         return;
     }
@@ -116,18 +120,24 @@ function playRound(playerChoice){    //this will play a round with the assigned 
                 humanScore = ++humanScore;
                 deletePreviousResult();
                 displayResult("You win! Paper beats rock");
+                removePreviousScore();
                 displayScore(humanScore, computerScore);
+                announceWinner();
                 return;
             }else if(computerChoice == "paper"){
                 deletePreviousResult();
                 displayResult("Draw!");
+                removePreviousScore();
                 displayScore(humanScore, computerScore);
+                announceWinner();
                 return;
             }else{
                 computerScore = ++computerScore;
                 deletePreviousResult();
                 displayResult("You lose! Scissors beats paper");
+                removePreviousScore();
                 displayScore(humanScore, computerScore);
+                announceWinner();
                 return;
             }
             break;
@@ -136,18 +146,24 @@ function playRound(playerChoice){    //this will play a round with the assigned 
                 computerScore = ++computerScore;
                 deletePreviousResult();
                 displayResult("You lose! Rock beats scissors");
+                removePreviousScore();
                 displayScore(humanScore, computerScore);
+                announceWinner();
                 return;
             }else if(computerChoice == "paper"){
                 humanScore = ++humanScore;
                 deletePreviousResult();
                 displayResult("You win! Scissors beats paper");
+                removePreviousScore();
                 displayScore(humanScore, computerScore);
+                announceWinner();
                 return;
             }else{
                 deletePreviousResult();
                 displayResult("Draw!");
+                removePreviousScore();
                 displayScore(humanScore, computerScore);
+                announceWinner();
                 return;
             }
             break;
