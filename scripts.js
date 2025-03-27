@@ -49,16 +49,6 @@ function deletePreviousResult(){
     }
 };
 
-/*function removePreviousScore(){
-    let scoreToRemove = document.querySelector(".score");
-
-    if(scoreToRemove.firstElementChild == null){
-        return;
-    }else{
-        let scoreRemove = document.querySelector("");
-    }
-};*/
-
 function displayScore(humanScore, computerScore){
     let showScoreContainer = document.querySelector("#scoreContainer");
     let scoreContent = document.createElement("div");
@@ -67,6 +57,17 @@ function displayScore(humanScore, computerScore){
     showScoreContainer.appendChild(scoreContent);
 };
 
+function removePreviousScore(){
+    let scoreToRemove = document.getElementById("scoreContainer");
+
+    if(scoreToRemove.firstElementChild == null){
+        return;
+    }else{
+        let scoreRemove = document.querySelector(".score");
+        scoreToRemove.removeChild(scoreRemove);
+    }
+}
+
 function playRound(playerChoice){    //this will play a round with the assigned choices
     let computerChoice = getComputerChoice();    
     switch(playerChoice){   //nest switch statement to evaluate the humanChoice aginst the computer
@@ -74,18 +75,21 @@ function playRound(playerChoice){    //this will play a round with the assigned 
             if(computerChoice == "rock"){
                 deletePreviousResult();
                 displayResult("Draw");
+                removePreviousScore();
                 displayScore(humanScore, computerScore);
                 return;                
             }else if(computerChoice == "paper"){
                 computerScore = ++computerScore;
                 deletePreviousResult();
                 displayResult("You lose! Paper beats rock!");
+                removePreviousScore();
                 displayScore(humanScore, computerScore);
                 return;
             }else{
                 humanScore = ++humanScore;
                 deletePreviousResult();
                 displayResult("You win! Rock beats scissors");
+                removePreviousScore();
                 displayScore(humanScore, computerScore);
                 return;
             }
