@@ -66,7 +66,21 @@ function removePreviousScore(){
         let scoreRemove = document.querySelector(".score");
         scoreToRemove.removeChild(scoreRemove);
     }
-}
+};
+
+function announceWinner(){
+    if(humanScore == 5){
+        alert("You are the winner!");
+        humanScore = 0;
+        computerScore = 0;
+    }else if(computerScore == 5){
+        alert("The computer is the winner!");
+        humanScore = 0;
+        computerScore = 0;
+    }else{
+        return;
+    }
+};
 
 function playRound(playerChoice){    //this will play a round with the assigned choices
     let computerChoice = getComputerChoice();    
@@ -77,6 +91,7 @@ function playRound(playerChoice){    //this will play a round with the assigned 
                 displayResult("Draw");
                 removePreviousScore();
                 displayScore(humanScore, computerScore);
+                announceWinner();
                 return;                
             }else if(computerChoice == "paper"){
                 computerScore = ++computerScore;
@@ -84,6 +99,7 @@ function playRound(playerChoice){    //this will play a round with the assigned 
                 displayResult("You lose! Paper beats rock!");
                 removePreviousScore();
                 displayScore(humanScore, computerScore);
+                announceWinner();
                 return;
             }else{
                 humanScore = ++humanScore;
@@ -91,6 +107,7 @@ function playRound(playerChoice){    //this will play a round with the assigned 
                 displayResult("You win! Rock beats scissors");
                 removePreviousScore();
                 displayScore(humanScore, computerScore);
+                announceWinner();
                 return;
             }
             break;
